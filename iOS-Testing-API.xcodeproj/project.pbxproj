@@ -11,7 +11,7 @@
 		A3676F0D25E010C2002B003C /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3676F0C25E010C2002B003C /* CharacterDetailsViewController.swift */; };
 		A3676F1225E02412002B003C /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3676F1125E02412002B003C /* ApiCalls.swift */; };
 		A3676F1525E047C7002B003C /* SingleCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3676F1425E047C7002B003C /* SingleCharacterModel.swift */; };
-		A3676F1825E04C46002B003C /* SharedFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3676F1725E04C46002B003C /* SharedFuncs.swift */; };
+		A3676F1825E04C46002B003C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3676F1725E04C46002B003C /* Extensions.swift */; };
 		A36AE86225DEB6B400B4AACB /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AE86125DEB6B400B4AACB /* CharacterModel.swift */; };
 		A36EDCE425E1854A00B889AC /* CharacterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EDCE325E1854A00B889AC /* CharacterPresenter.swift */; };
 		A36EDCE725E1ABD400B889AC /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36EDCE625E1ABD400B889AC /* LocationModel.swift */; };
@@ -35,7 +35,7 @@
 		A3676F0C25E010C2002B003C /* CharacterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewController.swift; sourceTree = "<group>"; };
 		A3676F1125E02412002B003C /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
 		A3676F1425E047C7002B003C /* SingleCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterModel.swift; sourceTree = "<group>"; };
-		A3676F1725E04C46002B003C /* SharedFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFuncs.swift; sourceTree = "<group>"; };
+		A3676F1725E04C46002B003C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A36AE86125DEB6B400B4AACB /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		A36EDCE325E1854A00B889AC /* CharacterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPresenter.swift; sourceTree = "<group>"; };
 		A36EDCE625E1ABD400B889AC /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 				A3972D6225E1D26D00BF6223 /* MVVM */,
 				A3972D6125E1D26300BF6223 /* MVP */,
 				A3676F1125E02412002B003C /* ApiCalls.swift */,
-				A3676F1725E04C46002B003C /* SharedFuncs.swift */,
+				A3676F1725E04C46002B003C /* Extensions.swift */,
 				A36EDCE925E1B6AC00B889AC /* CharacterBaseViewController.swift */,
 			);
 			path = Challenge;
@@ -222,7 +222,7 @@
 				A3CEBC2925E2E66E007B11A6 /* CharacterViewModel.swift in Sources */,
 				A3F5779825DDA4E6006BE6A5 /* CharacterFactory.swift in Sources */,
 				A3F5778325DDA14E006BE6A5 /* ViewController.swift in Sources */,
-				A3676F1825E04C46002B003C /* SharedFuncs.swift in Sources */,
+				A3676F1825E04C46002B003C /* Extensions.swift in Sources */,
 				A3F5779625DDA28A006BE6A5 /* CharacterTableViewController.swift in Sources */,
 				A3F5779C25DDA6A1006BE6A5 /* CharacterCell.swift in Sources */,
 				A3676F1225E02412002B003C /* ApiCalls.swift in Sources */,
@@ -377,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NDHJGT2V4K;
 				INFOPLIST_FILE = "iOS-Testing-API/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NDHJGT2V4K;
 				INFOPLIST_FILE = "iOS-Testing-API/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

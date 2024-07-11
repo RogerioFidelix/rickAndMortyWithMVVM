@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CharacterPresenterProtocol: class {
+protocol CharacterPresenterProtocol: AnyObject {
     func showCharacter(name: String,
                        image: String,
                        species: String,
@@ -24,19 +24,23 @@ final class CharacterPresenter {
     private let api: ApiCalls = ApiCalls()
     
     func loadCharacterModel(characterId: String) {
-        api.fetchCharacter(characterId: characterId) { [weak self] (characters) in
-            if characters.location?.url == "" {
-                DispatchQueue.main.async {
-                    self?.model = characters
-                    self?.loadLayout()
-                }
-            } else {
-                self?.api.fetchLocation(locationUrl: characters.location?.url ?? "") { [weak self] (location) in
+        DispatchQueue.main.async {
+            self.api.fetchCharacter(characterId: characterId) { [weak self] (characters) in
+                guard let self else { return }
+                if characters.location?.url == "" {
                     DispatchQueue.main.async {
-                        print(location)
-                        self?.model = characters
-                        self?.locationModel = location
-                        self?.loadLayout()
+                        self.model = characters
+                        self.loadLayout()
+                    }
+                } else {
+                    self.api.fetchLocation(locationUrl: characters.location?.url ?? "") { [weak self] (location) in
+                        guard let self else { return }
+                        DispatchQueue.main.async {
+                            print(location)
+                            self.model = characters
+                            self.locationModel = location
+                            self.loadLayout()
+                        }
                     }
                 }
             }

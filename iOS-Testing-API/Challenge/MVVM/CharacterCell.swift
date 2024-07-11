@@ -17,8 +17,9 @@ class CharacterCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func setupCell(characterImage: UIImage, characterLabel: String) {
-        self.characterImage?.image = characterImage
+    func setupCell(characterImageURL: String, characterLabel: String) {
+        
+        self.characterImage?.downloaded(from: characterImageURL)
         self.characterLabel?.text = characterLabel
     }
 }

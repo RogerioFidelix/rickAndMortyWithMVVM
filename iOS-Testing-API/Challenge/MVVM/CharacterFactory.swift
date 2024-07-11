@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol CharacterProtocol {
-    func getResult() -> CharacterModel
+    func getResult() -> CharacterModel?
     func getFilteredCharacters() -> [Results]
 }
 
@@ -46,7 +46,7 @@ class CharacterFactory {
                 for character in filter {
                     if let characterCell = tableView?.dequeueReusableCell(withIdentifier: "characterCell") as? CharacterCell {
 
-                        characterCell.setupCell(characterImage: SharedFuncs.init().urlToImage(from: character.image ?? ""),
+                        characterCell.setupCell(characterImageURL: character.image ?? "",
                                                 characterLabel: character.name ?? "")
 
                         characterCells.append(characterCell)
@@ -56,11 +56,11 @@ class CharacterFactory {
             
         } else {
             
-            if let loopResults = delegate?.getResult().results {
+            if let loopResults = delegate?.getResult()?.results {
                 for loop in loopResults {
                     if let characterCell = tableView?.dequeueReusableCell(withIdentifier: "characterCell") as? CharacterCell {
 
-                        characterCell.setupCell(characterImage: SharedFuncs.init().urlToImage(from: loop.image ?? ""),
+                        characterCell.setupCell(characterImageURL: loop.image ?? "",
                                                 characterLabel: loop.name ?? "")
 
                         characterCells.append(characterCell)

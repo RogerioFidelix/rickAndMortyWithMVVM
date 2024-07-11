@@ -11,18 +11,15 @@ import UIKit
 
 class CharacterBaseViewController: UIViewController {
     
-    internal lazy var activityIndicator: UIActivityIndicatorView = {
-        let aiv = UIActivityIndicatorView(frame: CGRect.zero)
-        aiv.hidesWhenStopped = true
-        aiv.style = .large
-        aiv.backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        aiv.translatesAutoresizingMaskIntoConstraints = false
-        return aiv
-    } ()
+    let activityView = UIActivityIndicatorView(style: .large)
     
-    internal func setupActivityIndicator() {
-        activityIndicator.startAnimating()
-        self.view.addSubview(activityIndicator)
-        activityIndicator.stopAnimating()
+    func showActivityIndicator() {
+        activityView.center = self.view.center
+        self.view.addSubview(activityView)
+        activityView.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        activityView.stopAnimating()
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CharacterTableViewController: UIViewController {
+class CharacterTableViewController: CharacterBaseViewController {
     
     @IBOutlet private weak var tableView: UITableView? {
         didSet {
@@ -26,6 +26,7 @@ class CharacterTableViewController: UIViewController {
     }()
     
     override func viewDidLoad() {
+        showActivityIndicator()
         super.viewDidLoad()
         self.title = "RickAndMortyCharacters"
         initViewModel()
@@ -61,6 +62,7 @@ class CharacterTableViewController: UIViewController {
         tv.dataSource = self
         characterFactory?.loadCells()
         tv.reloadData()
+        hideActivityIndicator()
     }
 }
 
@@ -76,8 +78,9 @@ extension CharacterTableViewController: CharacterProtocol {
         return viewModel.filteredCharacters()
     }
     
-    func getResult() -> CharacterModel {
-        return viewModel.characterModel!
+    func getResult() -> CharacterModel? {
+        guard let character = viewModel.characterModel else { return nil }
+        return character
     }
 }
 

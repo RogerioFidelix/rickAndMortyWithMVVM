@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "A"
+        self.title = "Challenges"
     }
     
     @IBAction private func challengeView(_ sender: Any) {
